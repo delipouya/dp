@@ -1,430 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Resume Title</title>
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
-    <style type="text/css">
-        /* Whole document */
-        body {
-            
-            
-            
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
-            /*font-family: "New York Times", "Times New Roman", Times, serif;
-            font-family: Garamond, serif;
-            font-family: Arial, Helvetica, sans-serif;
-            font-family: Calibri, sans-serif;
-            */
-            max-width: 800px;
-            margin: auto;
-            background: #FFFFFF;
-            padding: 10px;
-        }
-
-
-        /* ... (previous styles) ... */
-
-        .entry ul,
-        .entry ul li,
-        .entry ul li ul,
-        .entry ul li ul li {
-            margin-bottom: 8px; /* Adjusted margin between bullet lines for better readability */
-        }
-
-
-        /* Title of the resume */
-        h1 {
-            font-size: 52px;
-            color: #757575;
-            text-align: left;
-            margin-bottom: 15px;
-        }
-
-        /* Titles of categories */
-        h2 {
-            color: #397249;
-        }
-
-        /* There is a bar just before each category */
-        h2:before {
-            content: "";
-            display: inline-block;
-            margin-right: 1%;
-            width: 16%;
-            height: 10px;
-            background-color: #9CB770;
-        }
-
-        /* Definitions */
-        dt {
-            float: left;
-            clear: left;
-            width: 17%;
-            font-weight: bold;
-        }
-
-        dd {
-            margin-left: 17%;
-            margin-bottom: 7px;
-        }
-
-        p {
-            margin-top: 0;
-            margin-bottom: 7px;
-        }
-
-        /* Blockquotes */
-        blockquote {
-            text-align: center;
-        }
-
-        /* Links */
-        a {
-            text-decoration: none;
-            color: #397249;
-        }
-
-        a:hover,
-        a:active {
-            background-color: #397249;
-            color: #FFFFFF;
-            text-decoration: none;
-            text-shadow: 1px 1px 1px #333;
-        }
-
-        /* Horizontal separators */
-        hr {
-            color: #A6A6A6;
-        }
-
-        table {
-            width: 100%;
-        }
-
-        #education {
-        margin-bottom: 20px; /* Add margin to the bottom if needed */
-        }
-
-        .entry {
-            margin-bottom: 10px; /* Adjust the margin between entries */
-        }
-
-        h3 {
-            margin-bottom: 5px; /* Adjust the margin below each heading */
-        }
-
-        .date {
-            font-weight: bold; /* Make the date bold for emphasis */
-        }
-
-        .smaller-text {
-        font-size: 0.9em; /* You can adjust the value as needed */
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-content {
-            flex: 1;
-        }
-
-        .headshot-container {
-            flex-shrink: 0; /* Prevent the headshot from growing */
-            margin-left: 40px; /* Adjust the margin as needed */
-        }
-
-        .headshot {
-            width: 200px; /* Adjust the width of the headshot */
-            height: 220px; /* Adjust the height of the headshot */
-            border-radius: 80%; /* Make it a circular headshot */
-        }
-
-        /* Add the new styles for the publications section */
-        /* Add this CSS code to your existing styles */
-        #publications li:contains("Second author") {
-            color: #00FF00; /* Light green color */
-        }
-
-        #publications li:contains("Co-first author") {
-            color: #00FF00; /* Light green color */
-        }
-
-        /* Add this CSS code to your existing styles */
-        #publications .co-first-author {
-            color: #00FF00; /* Light green color for co-first authors */
-        }
-
-        #publications .second-author {
-            color: #00FF00; /* Light green color for second authors */
-        }
-
-
-
-    </style>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delaram Pouyabahar - CV</title>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      max-width: 950px;
+      margin: auto;
+      padding: 40px;
+      background: #fff;
+      color: #222;
+    }
+    h1 {
+      font-size: 36px;
+      color: #2f4f4f;
+    }
+    h2 {
+      color: #2e6f4c;
+      border-bottom: 2px solid #9CB770;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+    h3 {
+      font-size: 18px;
+      margin-top: 25px;
+      margin-bottom: 5px;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: normal;
+      margin-top: 2px;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+    p {
+      margin: 0 0 5px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .head-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .headshot {
+      border-radius: 50%;
+      width: 180px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .smaller-text {
+      font-size: 0.9em;
+    }
+    .pubs li {
+      margin-bottom: 8px;
+    }
+    .pubs li strong {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
+<div class="head-container">
+  <div>
+    <h1>Delaram Pouyabahar</h1>
+    <p>Goeva Lab | University of Toronto | Donnelly Centre for Biomolecular Research</p>
+    <p>Email: d.pouyabahar@mail.utoronto.ca | <a href="https://github.com/delipouya">GitHub</a> | <a href="https://scholar.google.ca/citations?user=H84iJsIAAAAJ&hl=en">Google Scholar</a></p>
+  </div>
+  <img src="./delaram_photo.jpg" alt="Delaram Pouyabahar" class="headshot">
+</div>
 
-    <header>
-    <div class="header-content">
-        <h1>Delaram Pouyabahar</h1>
-        <p>Bader Lab | Donnelly Centre</p>
-        <p>Email: d.pouyabahar@mail.utoronto.ca</p>
-    </div>
-    <div class="headshot-container">
-        <img src="./delaram_photo.jpg" alt="Delaram Pouyabahar" class="headshot">
-    </div>
-</header>
+<div class="section">
+<h2>Academic Research Experience</h2>
 
+<h3>Postdoctoral Researcher</h3>
+<h4>University of Toronto, Terrence Donnelly Centre for Cellular and Biomolecular Research | May 2025 – Present<br>Supervisor: Dr. Aleksandrina Goeva</h4>
+<ul>
+  <li>Developing a machine learning method to identify spatially localized disease-associated cell states across multi-sample spatial transcriptomics datasets.</li>
+</ul>
 
-<section id="education">
-    <h2>Education</h2>
-    <div class="entry">
-        <h3>Direct Ph.D. in Computational Biology | 2019 – Present</h3>
-        <p>Department of Molecular Genetics, University of Toronto, ON, Canada</p>
-    </div>
-    <div class="entry">
-        <h3>Bachelor of Science in Cell and Molecular Biology| 2014 - 2018</h3>
-        <p>University of Tehran, Tehran, Iran</p>
-    </div>
-    <div class="entry">
-        <h3>Diploma in Life Sciences Discipline | 2010 – 2014</h3>
-        <p>Farzanegan 2 High School, Tehran, Iran (NODET - National Organization for Development of Exceptional Talents)</p>
-    </div>
-</section>
+<h3>Graduate Student Researcher</h3>
+<h4>University of Toronto, Terrence Donnelly Centre for Cellular and Biomolecular Research | Jan 2020 – April 2025<br>Supervisor: Dr. Gary Bader</h4>
+<ul>
+  <li>Developed computational frameworks to extract interpretable biological and technical signals from multi-sample single-cell datasets using statistical and machine learning approaches.</li>
+  <li>Designed a scalable linear mixed-effects model for group-based differential expression analysis in large-scale single-cell RNA-seq studies.</li>
+  <li>Built the first multi-strain single-cell atlas of the rat liver and performed inter-strain comparisons in a rat liver transplant model in collaboration with the MacParland Lab.</li>
+</ul>
 
+<h3>Research Assistant (Bioinformatics)</h3>
+<h4>Sharif University of Technology, Tehran, Iran | July 2018 – August 2019<br>Supervisor: Dr. Ali Sharifi-Zarchi</h4>
+<ul>
+  <li>Investigated the genomic principles of small RNA sorting into exosomes using machine learning and deep learning approaches (in collaboration with the Goodarzi Lab, UCSF).</li>
+  <li>Analyzed ctDNA samples from breast cancer patients using variant calling pipelines to identify driver mutations and druggable targets.</li>
+  <li>Explored the statistical characteristics of ctDNA data to guide simulation tool development.</li>
+</ul>
 
+<h3>Visiting Research Intern (Structural Biology)</h3>
+<h4>EMBL, Heidelberg, Germany | June 2017 – September 2017<br>Supervisor: Dr. Janosch Hennig</h4>
+<ul>
+  <li>Investigated TRIM25 protein structure using NMR spectroscopy and X-ray crystallography.</li>
+  <li>Conducted protein expression and purification to support structure analysis.</li>
+</ul>
 
-<section id="research-experience">
-        <h2>Research Experience</h2>
+<h3>Undergraduate Research Assistant (Systems Biology)</h3>
+<h4>University of Tehran | March 2017 – July 2018<br>Supervisor: Dr. Sayed Amir Marashi</h4>
+<ul>
+  <li>Explored the relationship between metabolic gene co-expression and flux correlation in E. coli using microarray data and metabolic network sampling.</li>
+</ul>
+</div>
 
-        <div class="entry">
-            <h3>Academic Research Experience</h3>
+<div class="section">
+<h2>Industrial Research Experience</h2>
 
-            <div>
-                <h4>University of Toronto | Jan 2020 – Present</h4>
-                <p>Terrence Donnelly Centre - Supervisor: Dr. Gary Bader</p>
-                <ul>
-                    <li>Using statistical and machine learning approaches, developed a computational framework to identify interpretable signals in multifactorial single-cell maps.</li>
-                    <li>Developing a scalable linear mixed effect model for single-cell transcriptomics group-based differential expression.</li>
-                    <li>Constructed the first multi-strain single-cell atlas of the rat liver along with performing inter-strain comparison in rat liver transplant model (Collaboration with MacParland Lab)</li>
-                </ul>
-            </div>
+<h3>Part-Time Research Scientist (Computational R&D)</h3>
+<h4>Biossil Inc., Toronto, ON | February 2024 – May 2024<br>
+Supervisor: Dr. Alexander Mosa</h4>
+<ul>
+  <li>Applied machine learning techniques to analyze omics and biomedical text data for drug repurposing initiatives.</li>
+</ul>
 
-            <div>
-                <h4>Sharif University of Technology | July 2018 – Aug 2019</h4>
-                <p>Bioinformatics Research Group - Supervisor: Dr. Ali Sharifi-Zarchi</p>
-                <ul>
-                    <li>Investigating the genomic principles of small RNA sorting into exosomes using machine learning and deep learning methods (Collaboration with Goodarzi Lab, University of California, San Francisco)</li>
-                    <li>Analyzing ctDNA samples of breast cancer patients by Variant Calling methods to detect the driver genes and investigate druggable mutations</li>
-                    <li>Investigating the statistical properties of ctDNA data for designing a ctDNA read Simulator</li>
-                </ul>
-            </div>
+<h3>Part-Time Research Intern (Bioinformatics R&D)</h3>
+<h4>Pardis Gene Technology Co., Tehran, Iran | December 2018 – June 2019<br>
+Supervisor: Dr. Ali Sharifi-Zarchi</h4>
+<ul>
+  <li>Analyzed donor-derived cell-free DNA (cfDNA) from solid organ transplant patients to monitor graft health and enable earlier detection of acute rejection episodes.</li>
+  <li>Designed an individual identification SNP panel for the Iranian population based on the Iranome database.</li>
+</ul>
+</div>
 
-            <div>
-                <h4>EMBL Heidelberg | June 2017 - Sep 2017</h4>
-                <p>Structural and Computational Biology Unit - Supervisor: Dr. Janosch Hennig</p>
-                <ul>
-                    <li>Investigating 3D structure of TRIM25 protein by employing integrated structural biology techniques (NMR, X-ray crystallography) along with wet lab procedures for protein expression</li>
-                </ul>
-            </div>
+<div class="section">
+<h2>Publications</h2>
+<ul class="pubs">
+  <li>Xu, C.J.*, <strong>Pouyabahar, D.*</strong>, et al. (2025) FLASH-MM: Fast and scalable single-cell differential expression using mixed effect models. https://doi.org/10.1101/2025.04.08.647860</li>
+  <li><strong>Pouyabahar, D.</strong>, Andrews, T. & Bader, G.D. (2025). Interpretable single-cell factor decomposition using sciRED. Nature Communications, 16, 1878.</li>
+  <li><strong>Pouyabahar, D.*</strong>, Chung, S.W.* et al. (2023). A rat liver cell atlas reveals intrahepatic myeloid heterogeneity. iScience, 26(11), 108213.</li>
+  <li>Zirak, B.*,…, <strong>Pouyabahar, D.*</strong> et al. (2024). Revealing the grammar of small RNA secretion using interpretable machine learning. Cell Genomics, 4(4).</li>
+  <li>Clarke, Z.A.*, …, <strong>Pouyabahar, D.*</strong> et al. (2021). Tutorial: guidelines for annotating single-cell transcriptomic maps using automated and manual methods. Nature Protocols, 16(6), 2749-2764.</li>
+  <li>Lim, A.A., <strong>Pouyabahar, D.</strong>, et al. (2024). Single-cell transcriptome analysis reveals CD34 as a marker of human sinoatrial node pacemaker cardiomyocytes. Nature Communications, 15, 10206.</li>
+  <li>McEvoy, C.M., et al. (2022). Single-cell profiling of healthy human kidney reveals features of sex-based transcriptional programs and tissue-specific immunity. Nature Communications, 13(1), 7634.</li>
+  <li>Kozlowski, H.N., et al. (2023). Genotyping SARS-CoV-2 Variants Using Ratiometric Nucleic Acid Barcode Panels. Analytical Chemistry, 95(14), 5877-5885.</li>
+</ul>
+</div>
 
-            <div>
-                <h4>University of Tehran | Mar 2017 - July 2018</h4>
-                <p>Biotechnology Department - Supervisor: Dr. Sayed Amir Marashi</p>
-                <ul>
-                    <li>Investigating the relation between E. coli metabolic gene co-expression and metabolic flux correlation using microarray gene expression data and E. coli’s metabolic network model sampling results</li>
-                </ul>
-            </div>
+</body>
+</html>
 
-        </div>
+<div class="section">
+<h2>Oral Presentations</h2>
+<ul>
+  <li>Advanced computational methods for single-cell transcriptomics. Guest Lecturer | Advanced Omics Methods - MMG1328H | Graduate Course - UofT | April 2025</li>
+  <li>Interpretable single-cell factor decomposition using sciRED. ISMB Conference | RegSys Track Flash Talk | July 2024</li>
+  <li>Modeling sources of variation in single-cell transcriptomic maps. Donnelly Centre Postdoctoral Talks | June 2024</li>
+  <li>High-dimensional analysis in single-cell transcriptomics: Thinking beyond tradition. PANORAMICS - Donnelly Centre | July 2023</li>
+  <li>Single-cell profiling reveals strain-specific differences in rat intrahepatic macrophage inflammatory potential. Sheila Sherlock Research Day | University Health Network | Oct 2022</li>
+  <li>Guidelines for annotating single-cell transcriptomic maps using automated and manual methods. 10x Genomics Webinar | Dec 2021 | co-presented with Tallulah Andrews and Zoe Clarke</li>
+</ul>
+</div>
 
-        <div class="entry">
-            <h3>Industrial Research Experience</h3>
+<div class="section">
+<h2>Poster Presentations</h2>
+<ul>
+  <li>ISMB Conference | July 2024</li>
+  <li>CCBR retreat | June 2022, June 2023, June 2024</li>
+  <li>5th Annual PRiME Symposium | Feb 2024</li>
+  <li>Keystone Symposium | Single-Cell Biology: Genomics, Technologies, and Disease | Jan 2024</li>
+  <li>Medicine by Design’s Annual Symposium | Dec 2020, Dec 2021, Dec 2023</li>
+  <li>Data Science Research Day | Data Science Institute | Sep 2023</li>
+  <li>GLBIO Conference | May 2023</li>
+  <li>Molecular Genetics retreat | University of Toronto | Sep 2022</li>
+  <li>ISMB Conference | Virtual | July 2022</li>
+  <li>Canadian Liver Meeting | Virtual | May 2021, May 2022</li>
+</ul>
+</div>
 
-            <div>
-                <h4>Biossil Co. | Feb 2024 – May 2024 | Part-time</h4>
-                <p>Computational R&D group</p>
-                <ul>
-                    <li>Employing machine learning methods to analyze omics and text-based data for drug repurposing</li>
-                </ul>
-            </div>
+<div class="section">
+<h2>Honors and Funding</h2>
+<ul>
+  <li>Eric and Wendy Schmidt Postdoctoral Fellowship, Broad Institute of MIT and Harvard - 2025</li>
+  <li>Doctoral Student Fellowship, Data Science Institute, University of Toronto - 2022–2025</li>
+  <li>SGS Summer Conference Grant, University of Toronto - ISMB Conference, 2024</li>
+  <li>SGS Winter Conference Grant, University of Toronto - Keystone Conference, 2024</li>
+  <li>Jennifer Dorrington Graduate Research Award, Donnelly Centre, University of Toronto - 2024</li>
+  <li>SGS Spring Conference Grant, University of Toronto - GLBIO Conference, 2022</li>
+  <li>Cecil Yip Doctoral Research Award, Donnelly Centre, University of Toronto - 2020</li>
+  <li>Delta Kappa Gamma World Fellowship Finalist (Top 10 among all UofT female international students) - 2022</li>
+  <li>Fully Funded Direct-Entry PhD Program, Department of Molecular Genetics, University of Toronto - 2019–2025</li>
+  <li>Ranked 1st, Biological Sciences (~100 students), University of Tehran - 2014–2018</li>
+  <li>Direct Entrance Award for Graduate Education, University of Tehran - 2018</li>
+  <li>Fully Funded Summer Internship, European Molecular Biology Laboratory (EMBL) - 2017</li>
+</ul>
+</div>
 
-            <div>
-                <h4>Pardis Gene Technology Co. | Dec 2018 - June 2019 | Part-time</h4>
-                <p>Bioinformatics R&D Group</p>
-                <ul>
-                    <li>Analyzed donor-derived cfDNA data of solid organ transplant patients for monitoring of graft status and earlier detection of acute rejection episodes</li>
-                    <li>Designed an individual identification SNP panel for the Iranian population based on the Iranome database</li>
-                </ul>
-            </div>
+<div class="section">
+<h2>Teaching Experience and Course Development</h2>
+<h3>Course Instructor</h3>
+<ul>
+  <li>Data Science Bootcamp Session for SUDS | Intro to Unix Shell, Git, and GitHub | Data Science Institute - UofT | May 2024, April 2023</li>
+  <li>Data Science & Machine Learning Certificates | Introduction to Data Science | Data Science Institute - UofT | Nov 2023</li>
+  <li>Analysis using R workshop | Canadian Bioinformatics Workshops | Dimensionality reduction | June 2023</li>
+</ul>
 
-        </div>
+<h3>Teaching Assistance</h3>
+<ul>
+  <li>Pathway and Network Analysis | Canadian Bioinformatics workshops | Nov 2024</li>
+  <li>Genomic Methodologies (MMG3003Y) | University of Toronto | Winter - Summer 2024</li>
+  <li>Genomics (MMG1001) | Head TA | University of Toronto | Fall 2021, 2022, 2023</li>
+  <li>Single Cell RNA-seq Analysis | Canadian Bioinformatics workshops | July 2023, June 2024</li>
+  <li>Programming for Biologists (MMG1004) | University of Toronto | Spring 2021, 2022, 2023</li>
+  <li>Foundations of Data Science | Data Science Institute - UofT | Summer 2022, Winter 2023</li>
+  <li>Introduction to Computer Programming (CSC108) | University of Toronto | Winter 2022, Fall 2022</li>
+  <li>eCampus Ontario Introductory Coding for Genomics | University of Toronto | Fall 2021 - Winter 2022 | Curricular review and assessment of course content</li>
+  <li>Biochemistry | University of Tehran | Fall 2017</li>
+  <li>Structural Biochemistry | University of Tehran | Fall 2016</li>
+</ul>
+</div>
 
-    </section>
+<div class="section">
+<h2>Mentorship & Service</h2>
+<ul>
+  <li>Review Service: Scientific Reports (2025), LMRL Workshop, ICLR 2025, Biology Direct (2025), Pacific Symposium on Biocomputing (PSB) (2024), Nature Biotechnology (Co-review, 2024)</li>
+  <li>Undergraduate Bioinformatics Project Mentor | BCB330Y1 Supervisor | Exploring Genetic Basis of Transcriptomic Variation in Rat Liver Transplant Models | Sep 2023 - May 2024</li>
+  <li>Research Exploration Opportunity Program by STEM Fellowship | Graduate mentor | STEM Fellowship | March 2022 and March 2021</li>
+  <li>GLSE February Shadowing Program | Graduate mentor | Temerty Faculty of Medicine – U of T | Feb 2022</li>
+  <li>Rotation student Mentorship | Molecular Genetics department rotation program | Factor decomposition of an immune scRNA-seq dataset | Sep 2022</li>
+  <li>Rotation student Mentorship | Molecular Genetics department rotation program | SNV identification based on human liver scRNA-seq atlas | Sep 2023</li>
+  <li>Molecular Genetics Department’s Steward | CUPE 3902 Unit 1 | University of Toronto | Dec 2021 – Jan 2023</li>
+  <li>Bahar Charity Student Club | Child sponsorship program | University of Toronto | Winter 2020 – Winter 2022</li>
+</ul>
+</div>
 
-
-    <section id="publications">
-        <h2>Publications</h2>
-        <ol style="line-height: 1.5; padding-left: 20px;">
-            <li><strong>Pouyabahar, D.*</strong>, Xu, C.J.*, et al. (2024). Fast and scalable single-cell differential expression using mixed effect models. Manuscript In preparation.</li>
-            <li><strong>Pouyabahar, D.</strong>, et al. (2024). Interpretable single-cell factor decomposition using sciRED. In Review <a href="https://biorxiv.org/cgi/content/short/2024.08.01.605536v1" target="_blank">[BIORXIV/2024/605536]</a>.</li>
-            <li><strong>Pouyabahar, D.*</strong>, Chung, S.W.* et al. (2023). A rat liver cell atlas reveals intrahepatic myeloid heterogeneity. iScience, 26(11), 108213.</li>
-            <li>Zirak, B.*,…, <strong>Pouyabahar, D.*</strong>, et al. (2024). Revealing the grammar of small RNA secretion using interpretable machine learning. Cell Genomics, 4(4).</li>
-            <li>Clarke, Z.A.*, …, <strong>Pouyabahar, D.*</strong>, et al. (2021). Tutorial: guidelines for annotating single-cell transcriptomic maps using automated and manual methods. Nature Protocols, 16(6), 2749-2764.</li>
-            <li>Lim, A., <strong>Pouyabahar, D.</strong>, et al. (2023). Single-cell transcriptome analysis reveals CD34 as a novel marker of human sinoatrial node pacemaker cardiomyocytes. In revision at Nature Communications.</li>
-            <li>McEvoy, C.M., et al. (2022). Single-cell profiling of healthy human kidney reveals features of sex-based transcriptional programs and tissue-specific immunity. Nature Communications, 13(1), 7634.</li>
-            <li>Kozlowski, H.N., et al. (2023). Genotyping SARS-CoV-2 Variants Using Ratiometric Nucleic Acid Barcode Panels. Analytical Chemistry, 95(14), 5877-5885.</li>
-        </ol>
-    </section>
-
-
-    <section id="presentations">
-        <h2>Presentations</h2>
-
-        <h3>Oral Presentations</h3>
-        <ul>
-            <li><strong>Interpretable single-cell factor decomposition using sciRED.</strong><br>
-                ISMB Conference | RegSys Track Flash Talk | July 2024
-            </li>
-
-            <li><strong>Modeling sources of variation in single-cell transcriptomic maps.</strong><br>
-                Donnelly Centre Postdoctoral Talks | June 2024
-            </li>
-            <li><strong>High dimensional analysis in single-cell transcriptomics: Thinking beyond tradition.</strong><br>
-                PANORAMICS - Donnelly Centre | July 2023
-            </li>
-            <li><strong>Single-cell profiling reveals strain-specific differences in rat intrahepatic macrophage inflammatory potential.</strong><br>
-                Sheila Sherlock Research Day | Oct 2022
-            </li>
-            <li><strong>Guidelines for annotating single-cell transcriptomic maps using automated and manual methods.</strong><br>
-                10x Genomics Webinar | co-presented with Tallulah Andrews and Zoe Clarke | Dec 2021
-            </li>
-        </ul>
-
-        <h3>Poster Presentations</h3>
-        <ul>
-            <li>ISMB Conference | July 2024</li>
-            <li>CCBR retreat | June 2022, June 2023, June 2024</li>
-            <li>5th Annual PRiME Symposium | Feb 2024</li>
-            <li>Keystone Symposium | Single-Cell Biology: Genomics, Technologies, and Disease | Jan 2024</li>
-            <li>Medicine by Design’s Annual Symposium | Dec 2020, Dec 2021, Dec 2023</li>
-            <li>Data Science Research Day | Data Science Institute | Sep 2023</li>
-            <li>GLBIO Conference | May 2023</li>
-            <li>Molecular Genetics retreat | University of Toronto | Sep 2022</li>
-            <li>ISMB Conference | Virtual | July 2022</li>
-            <li>Canadian Liver Meeting | Virtual | May 2021, May 2022</li>
-        </ul>
-    </section>
-
-
-
-     <section id="honors-awards">
-        <h2>Honors & Awards</h2>
-        <ul>
-            <li>Awarded Doctoral Student Fellowship | Data Science Institute - UofT | $25,000/year | 2022 - 2025</li>
-            <li>Awarded SGS Conference Grant | University of Toronto | Keystone conference | 2024</li>
-            <li>Awarded Jennifer Dorrington Graduate Research Award | Donnelly Centre - UofT | 2024</li>
-            <li>Awarded SGS Conference Grant | University of Toronto | GLBIO conference | 2022</li>
-            <li>Awarded Cecil Yip Doctoral Research Award | Donnelly Centre - UofT | 2020</li>
-            <li>Finalist for Delta Kappa Gamma World Fellowships (top 10 among all UofT female international students) | 2022</li>
-            <li>Ranked 1st among all Biological Science students (~100 students) | University of Tehran | 2014-2018</li>
-            <li>Awarded Direct entrance award for Graduate Education | University of Tehran | 2018</li>
-            <li>Accepted at EMBL fully funded summer internship program | EMBL | 2017</li>
-        </ul>
-    </section>
-
-    <section id="teaching-experience">
-        <h2>Teaching Experience & Course Development</h2>
-
-        <div class="entry">
-            <h3><strong>Course Instructor</strong></h3>
-            <ul>
-                <li>Data Science Bootcamp Session for SUDS (Summer Undergraduate Data Science Research)</li>
-                <ul>
-                    <li>Introduction to Unix Shell, Git, and GitHub | Data Science Institute - UofT | May 2024, April 2023</li>
-                </ul>
-                <li>Data Science & Machine Learning Certificates</li>
-                <ul>
-                    <li>Introduction to Data Science | Data Science Institute - UofT | Nov 2023</li>
-                </ul>
-                <li>Analysis using R workshop | Canadian Bioinformatics Workshops</li>
-                <ul>
-                    <li>Dimensionality reduction | June 2023</li>
-                </ul>
-            </ul>
-        </div>
-
-        <div class="entry">
-            <h3><strong>Teaching Assistance</strong></h3>
-            <ul>
-                <li>Genomic Methodologies (MMG3003Y) | University of Toronto | Winter - Summer 2024</li>
-                <li>Genomics (MMG1001) | Head TA | University of Toronto | Fall 2023, 2022, 2021</li>
-                <li>Single Cell RNA-seq Analysis | Canadian Bioinformatics Workshops | July 2023, June 2024</li>
-                <li>Programming for Biologists (MMG1004) | University of Toronto | Spring 2023, 2022, 2021</li>
-                <li>Foundations of Data Science | Data Science Institute - UofT | Winter 2023, Summer 2022</li>
-                <li>Introduction to Computer Programming (CSC108) | University of Toronto | Fall 2022, Winter 2022</li>
-                <li>eCampus Ontario Introductory Coding for Genomics | University of Toronto | Fall 2021 - Winter 2022</li>
-                <ul>
-                    <li>Curricular review and assessment of course content</li>
-                </ul>
-                <li>Biochemistry | University of Tehran | Fall 2017</li>
-                <li>Structural Biochemistry | University of Tehran | Fall 2016</li>
-            </ul>
-        </div>
-    </section>
-        
-
-    <section id="mentorship-activities">
-        <h2>Mentorship & Extracurricular Activities</h2>
-
-        <div class="entry">
-            <p><strong>Undergraduate Bioinformatics Project Mentor | BCB330Y1 Mentor</strong></p>
-            <p class="smaller-text">Exploring Genetic Basis of Transcriptomic Variation in Rat Liver Transplant Models | Sep 2023 - May 2024</p>
-        </div>
-
-        <div class="entry">
-            <p><strong>Research Exploration Opportunity Program by STEM Fellowship</strong></p>
-            <p class="smaller-text">Graduate mentor | STEM Fellowship charity | March 2022 and March 2021</p>
-        </div>
-
-        <div class="entry">
-            <p><strong>GLSE February Shadowing Program</strong></p>
-            <p class="smaller-text">Graduate mentor | Temerty Faculty of Medicine – U of T | Feb 2022</p>
-        </div>
-
-        <div class="entry">
-            <p><strong>Rotation student Mentorship | Molecular Genetics department rotation program</strong></p>
-            <ul class="smaller-text">
-                <li>Factor decomposition of an immune scRNA-seq dataset | Sep 2022</li>
-                <li>SNV identification based on human liver scRNA-seq atlas | Sep 2023</li>
-            </ul>
-        </div>
-
-        <div class="entry">
-            <p><strong>Molecular Genetics Department’s Steward</strong></p>
-            <p class="smaller-text">CUPE 3902 Unit 1 | University of Toronto | Dec 2021 – Jan 2023</p>
-        </div>
-
-        <div class="entry">
-            <p><strong>Bahar Charity Student Club</strong></p>
-            <p class="smaller-text">Child sponsorship program | University of Toronto | Winter 2020 – Winter 2022</p>
-        </div>
-
-    </section>
-
-
-
-
-
-
+</body>
+</html>
