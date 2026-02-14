@@ -44,20 +44,29 @@
     .section {
       margin-bottom: 40px;
     }
-    .head-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
-    }
 
-    .headshot {
-      border-radius: 12px;
-      max-width: 200px;
-      height: auto;
-      object-fit: cover;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+.head-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: nowrap;          /* force single row */
+}
+
+.head-text {
+  flex: 1 1 auto;
+  min-width: 0;               /* allow wrapping inside text column */
+}
+.headshot {
+  flex: 0 0 200px;   /* was 160px */
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: block;
+}
     .smaller-text {
       font-size: 0.9em;
     }
@@ -68,18 +77,27 @@
       font-weight: bold;
     }
     
+
   </style>
 </head>
 <body>
 
+
 <div class="head-container">
-  <div>
+  <div class="head-text">
     <h1>Delaram Pouyabahar</h1>
-    <p>Goeva Lab | University of Toronto | Donnelly Centre for Biomolecular Research</p>
-    <p>Email: d.pouyabahar@mail.utoronto.ca | <a href="https://github.com/delipouya">GitHub</a> | <a href="https://scholar.google.ca/citations?user=H84iJsIAAAAJ&hl=en">Google Scholar</a></p>
+    <p><strong>Eric and Wendy Schmidt Postdoctoral Fellow, Broad Institute of MIT and Harvard</strong></p>
+    <p>Hosted at the Wellcome Sanger Institute</p>
+    <p>dpouyaba@broadinstitute.org · dp31@sanger.ac.uk</p>
+    <p>
+      <a href="https://github.com/delipouya">GitHub</a> |
+      <a href="https://scholar.google.ca/citations?user=H84iJsIAAAAJ&hl=en">Google Scholar</a>
+    </p>
   </div>
-  <img src="./delaram_photo.jpg" alt="Delaram Pouyabahar" class="headshot">
+
+  <img class="headshot" src="./delaram_photo.jpg" alt="Delaram headshot">
 </div>
+
 
 <div class="section">
 <h2>Education</h2>
@@ -93,8 +111,14 @@
 <div class="section">
 <h2>Academic Research Experience</h2>
 
+<h3>Eric and Wendy Schmidt Postdoctoral Fellow</h3>
+<h4>Broad Institute of MIT and Harvard | Feb 2026 – Present</h4>
+<ul>
+  <li>Development and application of machine learning models for protein sequence analysis to study immunological mechanisms and predict viral evolution.</li>
+</ul>
+
 <h3>Postdoctoral Researcher</h3>
-<h4>University of Toronto, Terrence Donnelly Centre for Cellular and Biomolecular Research | May 2025 – Present<br>Supervisor: Dr. Aleksandrina Goeva</h4>
+<h4>University of Toronto, Terrence Donnelly Centre for Cellular and Biomolecular Research | May 2025 – Jan 2026<br>Supervisor: Dr. Aleksandrina Goeva</h4>
 <ul>
   <li>Developing a machine learning method to identify spatially localized disease-associated cell states across multi-sample spatial transcriptomics datasets.</li>
 </ul>
@@ -149,7 +173,7 @@
 <div class="section">
 <h2>Publications</h2>
 <ul class="pubs">
-  <li>Xu, C.J.*, <strong>Pouyabahar, D.*</strong>, et al. (2025) FLASH-MM: Fast and scalable single-cell differential expression using mixed effect models. https://doi.org/10.1101/2025.04.08.647860</li>
+  <li>Xu, C.J.*, <strong>Pouyabahar, D.*</strong>, et al. (2026) FLASH-MM: fast and scalable single-cell differential expression analysis using linear mixed-effects models. Nature Communications. https://doi.org/10.1038/s41467-026-69063-2</li>
   <li><strong>Pouyabahar, D.</strong>, Andrews, T. & Bader, G.D. (2025). Interpretable single-cell factor decomposition using sciRED. Nature Communications, 16, 1878.</li>
   <li><strong>Pouyabahar, D.*</strong>, Chung, S.W.* et al. (2023). A rat liver cell atlas reveals intrahepatic myeloid heterogeneity. iScience, 26(11), 108213.</li>
   <li>Zirak, B.*,…, <strong>Pouyabahar, D.*</strong> et al. (2024). Revealing the grammar of small RNA secretion using interpretable machine learning. Cell Genomics, 4(4).</li>
@@ -166,6 +190,7 @@
 <div class="section">
 <h2>Oral Presentations</h2>
 <ul>
+  <li>Modeling sources of variation to interpret single-cell transcriptomic maps. ISCB regional group - Iran | Invited speaker | Nov 2025</li>
   <li>Advanced computational methods for single-cell transcriptomics. Guest Lecturer | Advanced Omics Methods - MMG1328H | Graduate Course - UofT | April 2025</li>
   <li>Interpretable single-cell factor decomposition using sciRED. ISMB Conference | RegSys Track Flash Talk | July 2024</li>
   <li>Modeling sources of variation in single-cell transcriptomic maps. Donnelly Centre Postdoctoral Talks | June 2024</li>
@@ -235,7 +260,8 @@
 <div class="section">
 <h2>Mentorship & Service</h2>
 <ul>
-  <li>Review Service: Scientific Reports (2025), LMRL Workshop, ICLR 2025, Biology Direct (2025), Pacific Symposium on Biocomputing (PSB) (2024), Nature Biotechnology (Co-review, 2024)</li>
+  <li>Review Service: LMRL Workshop, ICLR 2026, BMC Bioinformatics (2025), Scientific Reports (2025), LMRL Workshop, ICLR 2025, Biology Direct (2025), Pacific Symposium on Biocomputing (PSB) (2024), Nature Biotechnology (Co-review, 2024)</li>
+  <li>Undergraduate Research Mentor | University of Toronto | Benchmarking case–control differential cell–cell interaction inference methods in single-cell transcriptomics datasets | Jun 2025 – Present</li>
   <li>Undergraduate Bioinformatics Project Mentor | BCB330Y1 Supervisor | Exploring Genetic Basis of Transcriptomic Variation in Rat Liver Transplant Models | Sep 2023 - May 2024</li>
   <li>Research Exploration Opportunity Program by STEM Fellowship | Graduate mentor | STEM Fellowship | March 2022 and March 2021</li>
   <li>GLSE February Shadowing Program | Graduate mentor | Temerty Faculty of Medicine – U of T | Feb 2022</li>
