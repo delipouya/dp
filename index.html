@@ -4,80 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Delaram Pouyabahar - CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --text:#222;
-      --muted:#444;
-      --accent:#2e6f4c;
+      --bg:#f7f6f2;
+      --paper:#ffffff;
+      --text:#232922;
+      --muted:#5c6a60;
+      --accent:#215e42;
+      --accent-soft:#e4ecdf;
       --accent2:#9CB770;
-      --title:#2f4f4f;
-      --rule:#e7ece9;
+      --title:#132a20;
+      --rule:#e6e5df;
+      --line:#d7ddd1;
     }
 
     * { box-sizing: border-box; }
 
+    html { background: var(--bg); }
+
     body {
-      font-family: Helvetica, Arial, sans-serif;
-      max-width: 950px;
+      font-family: 'Inter', Helvetica, Arial, sans-serif;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 44px;
-      background: #fff;
+      padding: 56px 20px 80px;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.38;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .paper {
+      position: relative;
+      background: var(--paper);
+      border-radius: 18px;
+      padding: 48px 56px;
+      box-shadow: 0 1px 3px rgba(20,30,20,0.04), 0 12px 40px rgba(20,30,20,0.06);
+      overflow: hidden;
+    }
+
+    .paper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s ease, color .15s ease; }
+    a:hover { border-bottom-color: var(--accent); }
+
+    ::selection { background: var(--accent-soft); color: var(--title); }
 
     h1 {
-      font-size: 38px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 40px;
+      font-weight: 700;
       color: var(--title);
-      margin: 0 0 8px 0;
-      letter-spacing: -0.2px;
+      margin: 0 0 6px 0;
+      letter-spacing: -0.3px;
     }
 
     h2 {
+      font-family: 'Inter', sans-serif;
       color: var(--accent);
-      border-bottom: 2px solid var(--accent2);
-      padding-bottom: 6px;
-      margin: 34px 0 12px 0;
-      font-size: 22px;
+      margin: 40px 0 18px 0;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::after {
+      content: "";
+      flex: 1 1 auto;
+      height: 1px;
+      background: var(--rule);
     }
 
     h3 {
+      font-family: 'Source Serif 4', Georgia, serif;
       font-size: 18px;
-      margin: 18px 0 4px 0;
+      font-weight: 600;
+      margin: 0 0 2px 0;
+      color: var(--title);
     }
 
     h4 {
-      font-size: 16px;
-      font-weight: normal;
-      margin: 0 0 8px 0;
+      font-size: 13.5px;
+      font-weight: 500;
+      margin: 0 0 10px 0;
       color: var(--muted);
+      font-style: italic;
+    }
+
+    .addr {
+      font-size: 13px;
+      font-style: normal;
+      color: var(--muted);
+      margin: 0 0 4px 0;
     }
 
     p { margin: 0 0 6px 0; }
 
     ul {
-      padding-left: 20px;
-      margin: 6px 0 10px 0;
+      list-style: none;
+      padding-left: 4px;
+      margin: 6px 0 4px 0;
     }
 
-    li { margin-bottom: 6px; }
+    ul:not(.pubs) > li {
+      position: relative;
+      padding-left: 16px;
+    }
 
-    .section { margin-bottom: 22px; }
+    ul:not(.pubs) > li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent2);
+    }
+
+    li { margin-bottom: 7px; }
+
+    .section { margin-bottom: 6px; }
 
     /* Header */
     .head-container {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
-      gap: 26px;
-      margin-bottom: 26px;
+      gap: 30px;
+      margin-bottom: 20px;
       flex-wrap: nowrap;
-      padding-bottom: 16px;
+      padding-bottom: 28px;
       border-bottom: 1px solid var(--rule);
     }
 
@@ -86,56 +158,209 @@
       min-width: 0;
     }
 
-    .head-text p { margin: 0 0 5px 0; }
+    .role-line {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 1.35;
+      margin: 8px 0 3px 0;
+    }
+
+    .institute-line {
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--title);
+      font-size: 16.5px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0 0 10px 0;
+    }
+
+    .sub-line {
+      color: var(--muted);
+      font-size: 14.5px;
+      font-style: italic;
+      margin: 0 0 14px 0;
+    }
+
+    .contact-line {
+      font-size: 15.5px;
+      color: var(--text);
+      margin: 0 0 14px 0;
+    }
+    .contact-line a {
+      color: var(--text);
+      border-bottom: 1px solid var(--rule);
+    }
+    .contact-line a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .links-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .links-row a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 50%;
+      border-bottom: none;
+      transition: background .15s ease, color .15s ease, transform .15s ease;
+    }
+    .links-row a:hover { background: var(--accent2); color: #fff; transform: translateY(-2px); }
+    .links-row svg { width: 17px; height: 17px; fill: currentColor; }
 
     .headshot {
-      flex: 0 0 200px;
-      width: 200px;
-      height: 200px;
-      border-radius: 14px;
+      flex: 0 0 168px;
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.10);
+      box-shadow: 0 4px 18px rgba(20,30,20,0.14);
+      border: 4px solid var(--paper);
+      outline: 1px solid var(--rule);
       display: block;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .headshot:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 24px rgba(20,30,20,0.2);
     }
 
     /* Publications */
-    .pubs li { margin-bottom: 10px; }
+    .pubs { counter-reset: pub; }
+    .pubs li {
+      list-style: none;
+      counter-increment: pub;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 12px;
+    }
+    .pubs li::before {
+      content: counter(pub);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pubs { padding-left: 0; }
     .pubs li strong { font-weight: 700; }
 
-    /* Subtle spacing between role blocks */
-    .role-block { margin-top: 8px; }
+    /* Timeline-style research experience */
+    .timeline {
+      position: relative;
+      margin-left: 4px;
+      padding-left: 26px;
+      border-left: 2px solid var(--line);
+    }
 
-    /* Make dense list sections easier to scan */
-    .section ul li { line-height: 1.35; }
+    .role-block {
+      position: relative;
+      margin-bottom: 26px;
+    }
+    .role-block:last-child { margin-bottom: 4px; }
+
+    .role-block::before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 5px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 3px solid var(--accent);
+    }
+
+    /* Tighter timeline for short entries (e.g. Education) */
+    .timeline.compact .role-block {
+      margin-bottom: 12px;
+    }
+    .timeline.compact .role-block:last-child {
+      margin-bottom: 4px;
+    }
+    .timeline.compact .role-block::before {
+      width: 8px;
+      height: 8px;
+      left: -29px;
+      top: 4px;
+      border-width: 2px;
+    }
+    .timeline.compact h4 {
+      margin-bottom: 0;
+    }
+
+    .section ul li { line-height: 1.42; }
+
+    /* Softer inline field separator (replaces bare "|") */
+    .sep {
+      color: var(--accent2);
+      font-weight: 700;
+      margin: 0 1px;
+    }
 
     /* Responsive */
     @media (max-width: 720px) {
-      body { padding: 26px; }
+      body { padding: 20px 10px 50px; }
+      .paper { padding: 30px 24px; }
       .head-container { flex-direction: column-reverse; align-items: flex-start; }
-      .headshot { width: 180px; height: 180px; flex: 0 0 auto; }
+      .headshot { width: 130px; height: 130px; flex: 0 0 auto; }
+      h1 { font-size: 32px; }
     }
 
     /* Print-friendly */
     @media print {
+      html, body { background: #fff; }
       body { padding: 0; }
+      .paper { box-shadow: none; border-radius: 0; padding: 0; }
+      .paper::before { display: none; }
       a { color: #000; text-decoration: none; }
+      .links-row a { background: none; padding: 0; }
       .head-container { border-bottom: 1px solid #ccc; }
     }
   </style>
 </head>
 
 <body>
+<div class="paper">
 
   <div class="head-container">
     <div class="head-text">
       <h1>Delaram Pouyabahar</h1>
-      <p><strong>Eric and Wendy Schmidt Postdoctoral Fellow, Broad Institute of MIT and Harvard</strong></p>
-      <p>Hosted at the Wellcome Sanger Institute</p>
-      <p>dpouyaba@broadinstitute.org · dp31@sanger.ac.uk</p>
-      <p>
-        <a href="https://github.com/delipouya">GitHub</a> |
-        <a href="https://scholar.google.ca/citations?user=H84iJsIAAAAJ&hl=en">Google Scholar</a>
-      </p>
+      <p class="role-line">Eric and Wendy Schmidt Postdoctoral Fellow</p>
+      <p class="institute-line">Broad Institute of MIT and Harvard</p>
+      <p class="sub-line">Hosted at the Wellcome Sanger Institute</p>
+      <p class="contact-line"><a href="mailto:dpouyaba@broadinstitute.org">dpouyaba@broadinstitute.org</a> &nbsp;&middot;&nbsp; <a href="mailto:dp31@sanger.ac.uk">dp31@sanger.ac.uk</a></p>
+      <div class="links-row">
+        <a href="https://github.com/delipouya" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://scholar.google.ca/citations?user=H84iJsIAAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.24 14.978 9.5 12 9.5c-2.977 0-5.548 1.74-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/delaram-pouyabahar-774819131" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.94v5.666H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/deli.pouya/" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.058-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.79-4 4-4 2.209 0 4 1.79 4 4 0 2.209-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.645-1.44-1.44 0-.794.645-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+        </a>
+      </div>
     </div>
 
     <img class="headshot" src="./delaram_photo.jpg" alt="Delaram headshot">
@@ -143,137 +368,163 @@
 
   <div class="section">
     <h2>Education</h2>
-    <ul>
-      <li><strong>Ph.D. in Computational Biology</strong>, University of Toronto, 2019–2025</li>
-      <li><strong>B.Sc. in Cell &amp; Molecular Biology</strong>, University of Tehran, 2014–2018</li>
-      <li><strong>Diploma in Life Sciences</strong>, Farzanegan 2 (NODET), Tehran, 2010–2014</li>
-    </ul>
+    <div class="timeline compact">
+
+      <div class="role-block">
+        <h3>University of Toronto</h3>
+        <p class="addr">Toronto, ON, Canada</p>
+        <h4>Ph.D. in Computational Biology &nbsp;<span class="sep">&middot;</span>&nbsp; 2019 – 2025</h4>
+      </div>
+
+      <div class="role-block">
+        <h3>University of Tehran</h3>
+        <p class="addr">Tehran, Iran</p>
+        <h4>B.Sc. in Cell &amp; Molecular Biology &nbsp;<span class="sep">&middot;</span>&nbsp; 2014 – 2018</h4>
+      </div>
+
+    </div>
   </div>
 
   <div class="section">
     <h2>Academic Research Experience</h2>
+    <div class="timeline">
 
-    <div class="role-block">
-      <h3>Eric and Wendy Schmidt Postdoctoral Fellow</h3>
-      <h4>Broad Institute of MIT and Harvard, Schmidt Center | Feb 2026 – Present</h4>
-      <ul>
-        <li>Development and application of machine learning models for protein sequence analysis to study immunological mechanisms and predict viral evolution.</li>
-      </ul>
-    </div>
+      <div class="role-block">
+        <h3>Broad Institute of MIT and Harvard, Schmidt Center</h3>
+        <h4>Eric and Wendy Schmidt Postdoctoral Fellow &nbsp;<span class="sep">&middot;</span>&nbsp; Feb 2026 – Present &nbsp;&middot;&nbsp; Supervisor: Dr. Debbie Marks</h4>
+        <ul>
+          <li>Developing machine learning models to predict peptide-MHC binding to T cell receptors and downstream functional T cell activation, with applications to repertoire-level immunogenicity prediction and immune engineering.</li>
+        </ul>
+      </div>
 
-    <div class="role-block">
-      <h3>Postdoctoral Researcher</h3>
-      <h4>University of Toronto, Terrence Donnelly Centre for Cellular and Biomolecular Research | May 2025 – Jan 2026<br>Supervisor: Dr. Aleksandrina Goeva</h4>
-      <ul>
-        <li>Developing a machine learning method to identify spatially localized disease-associated cell states across multi-sample spatial transcriptomics datasets.</li>
-      </ul>
-    </div>
+      <div class="role-block">
+        <h3>Terrence Donnelly Centre for Cellular and Biomolecular Research, University of Toronto</h3>
+        <p class="addr">Toronto, ON, Canada</p>
+        <h4>Postdoctoral Researcher &nbsp;<span class="sep">&middot;</span>&nbsp; May 2025 – Jan 2026 &nbsp;&middot;&nbsp; Supervisor: Dr. Aleksandrina Goeva</h4>
+        <ul>
+          <li>Developing a machine learning method to identify spatially localized disease-associated cell states across multi-sample spatial transcriptomics datasets.</li>
+        </ul>
+      </div>
 
-    <div class="role-block">
-      <h3>Graduate Student Researcher</h3>
-      <h4>University of Toronto, Terrence Donnelly Centre for Cellular and Biomolecular Research | Jan 2020 – April 2025<br>Supervisor: Dr. Gary Bader</h4>
-      <ul>
-        <li>Developed computational frameworks to extract interpretable biological and technical signals from multi-sample single-cell datasets using statistical and machine learning approaches.</li>
-        <li>Designed a scalable linear mixed-effects model for group-based differential expression analysis in large-scale single-cell RNA-seq studies.</li>
-        <li>Built the first multi-strain single-cell atlas of the rat liver and performed inter-strain comparisons in a rat liver transplant model in collaboration with the MacParland Lab.</li>
-      </ul>
-    </div>
+      <div class="role-block">
+        <h3>University of Toronto</h3>
+        <p class="addr">Toronto, ON, Canada</p>
+        <h4>Graduate Student Researcher &nbsp;<span class="sep">&middot;</span>&nbsp; Jan 2020 – April 2025 &nbsp;&middot;&nbsp; Supervisor: Dr. Gary Bader</h4>
+        <ul>
+          <li>Developed computational frameworks to extract interpretable biological and technical signals from multi-sample single-cell datasets using statistical and machine learning approaches.</li>
+          <li>Designed a scalable linear mixed-effects model for group-based differential expression analysis in large-scale single-cell RNA-seq studies.</li>
+          <li>Built the first multi-strain single-cell atlas of the rat liver and performed inter-strain comparisons in a rat liver transplant model in collaboration with the MacParland Lab.</li>
+        </ul>
+      </div>
 
-    <div class="role-block">
-      <h3>Research Assistant (Bioinformatics)</h3>
-      <h4>Sharif University of Technology, Tehran, Iran | July 2018 – August 2019<br>Supervisor: Dr. Ali Sharifi-Zarchi</h4>
-      <ul>
-        <li>Investigated the genomic principles of small RNA sorting into exosomes using machine learning and deep learning approaches (in collaboration with the Goodarzi Lab, UCSF).</li>
-        <li>Analyzed ctDNA samples from breast cancer patients using variant calling pipelines to identify driver mutations and druggable targets.</li>
-        <li>Explored the statistical characteristics of ctDNA data to guide simulation tool development.</li>
-      </ul>
-    </div>
+      <div class="role-block">
+        <h3>Sharif University of Technology</h3>
+        <p class="addr">Tehran, Iran</p>
+        <h4>Research Assistant &nbsp;<span class="sep">&middot;</span>&nbsp; July 2018 – August 2019 &nbsp;&middot;&nbsp; Supervisor: Dr. Ali Sharifi-Zarchi</h4>
+        <ul>
+          <li>Investigated the genomic principles of small RNA sorting into exosomes using machine learning and deep learning approaches (in collaboration with the Goodarzi Lab, UCSF).</li>
+          <li>Analyzed ctDNA samples from breast cancer patients using variant calling pipelines to identify driver mutations and druggable targets.</li>
+          <li>Explored the statistical characteristics of ctDNA data to guide simulation tool development.</li>
+        </ul>
+      </div>
 
-    <div class="role-block">
-      <h3>Visiting Research Intern (Structural Biology)</h3>
-      <h4>EMBL, Heidelberg, Germany | June 2017 – September 2017<br>Supervisor: Dr. Janosch Hennig</h4>
-      <ul>
-        <li>Investigated TRIM25 protein structure using NMR spectroscopy and X-ray crystallography.</li>
-        <li>Conducted protein expression and purification to support structure analysis.</li>
-      </ul>
-    </div>
+      <div class="role-block">
+        <h3>European Molecular Biology Laboratory (EMBL)</h3>
+        <p class="addr">Heidelberg, Germany</p>
+        <h4>Visiting Research Intern &nbsp;<span class="sep">&middot;</span>&nbsp; June 2017 – September 2017 &nbsp;&middot;&nbsp; Supervisor: Dr. Janosch Hennig</h4>
+        <ul>
+          <li>Investigated TRIM25 protein structure using NMR spectroscopy and X-ray crystallography.</li>
+          <li>Conducted protein expression and purification to support structure analysis.</li>
+        </ul>
+      </div>
 
-    <div class="role-block">
-      <h3>Undergraduate Research Assistant (Systems Biology)</h3>
-      <h4>University of Tehran | March 2017 – July 2018<br>Supervisor: Dr. Sayed Amir Marashi</h4>
-      <ul>
-        <li>Explored the relationship between metabolic gene co-expression and flux correlation in E. coli using microarray data and metabolic network sampling.</li>
-      </ul>
+      <div class="role-block">
+        <h3>University of Tehran</h3>
+        <p class="addr">Tehran, Iran</p>
+        <h4>Undergraduate Research Assistant &nbsp;<span class="sep">&middot;</span>&nbsp; March 2017 – July 2018 &nbsp;&middot;&nbsp; Supervisor: Dr. Sayed Amir Marashi</h4>
+        <ul>
+          <li>Explored the relationship between metabolic gene co-expression and flux correlation in E. coli using microarray data and metabolic network sampling.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
   <div class="section">
     <h2>Industrial Research Experience</h2>
+    <div class="timeline">
 
-    <div class="role-block">
-      <h3>Part-Time Research Scientist (Computational R&amp;D)</h3>
-      <h4>Biossil Inc., Toronto, ON | February 2024 – May 2024</h4>
-      <ul>
-        <li>Applied machine learning techniques to analyze omics and biomedical text data for drug repurposing initiatives.</li>
-      </ul>
-    </div>
+      <div class="role-block">
+        <h3>Biossil Inc.</h3>
+        <p class="addr">Toronto, ON, Canada</p>
+        <h4>Part-Time Research Scientist (Computational R&amp;D) &nbsp;<span class="sep">&middot;</span>&nbsp; February 2024 – May 2024</h4>
+        <ul>
+          <li>Applied machine learning techniques to analyze omics and biomedical text data for drug repurposing initiatives.</li>
+        </ul>
+      </div>
 
-    <div class="role-block">
-      <h3>Part-Time Research Intern (Bioinformatics R&amp;D)</h3>
-      <h4>Pardis Gene Technology Co., Tehran, Iran | December 2018 – June 2019</h4>
-      <ul>
-        <li>Analyzed donor-derived cell-free DNA (cfDNA) from solid organ transplant patients to monitor graft health and enable earlier detection of acute rejection episodes.</li>
-        <li>Designed an individual identification SNP panel for the Iranian population based on the Iranome database.</li>
-      </ul>
+      <div class="role-block">
+        <h3>Pardis Gene Technology Co.</h3>
+        <p class="addr">Tehran, Iran</p>
+        <h4>Part-Time Research Intern (Bioinformatics R&amp;D) &nbsp;<span class="sep">&middot;</span>&nbsp; December 2018 – June 2019</h4>
+        <ul>
+          <li>Analyzed donor-derived cell-free DNA (cfDNA) from solid organ transplant patients to monitor graft health and enable earlier detection of acute rejection episodes.</li>
+          <li>Designed an individual identification SNP panel for the Iranian population based on the Iranome database.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
   <div class="section">
     <h2>Publications</h2>
     <ul class="pubs">
-      <li>Xu, C.J.*, <strong>Pouyabahar, D.*</strong>, et al. (2026) FLASH-MM: fast and scalable single-cell differential expression analysis using linear mixed-effects models. Nature Communications. https://doi.org/10.1038/s41467-026-69063-2</li>
+      <li>Xu, C.*, <strong>Pouyabahar, D.*</strong>, et al. (2026) FLASH-MM: fast and scalable single-cell differential expression analysis using linear mixed-effects models. Nature Communications, 17, 2384.</li>
       <li><strong>Pouyabahar, D.</strong>, Andrews, T. &amp; Bader, G.D. (2025). Interpretable single-cell factor decomposition using sciRED. Nature Communications, 16, 1878.</li>
       <li><strong>Pouyabahar, D.*</strong>, Chung, S.W.* et al. (2023). A rat liver cell atlas reveals intrahepatic myeloid heterogeneity. iScience, 26(11), 108213.</li>
       <li>Zirak, B.*,…, <strong>Pouyabahar, D.*</strong> et al. (2024). Revealing the grammar of small RNA secretion using interpretable machine learning. Cell Genomics, 4(4).</li>
       <li>Clarke, Z.A.*, …, <strong>Pouyabahar, D.*</strong> et al. (2021). Tutorial: guidelines for annotating single-cell transcriptomic maps using automated and manual methods. Nature Protocols, 16(6), 2749-2764.</li>
       <li>Lim, A.A., <strong>Pouyabahar, D.</strong>, et al. (2024). Single-cell transcriptome analysis reveals CD34 as a marker of human sinoatrial node pacemaker cardiomyocytes. Nature Communications, 15, 10206.</li>
+      <li>Edgar, R.D., Portman, J.R., Hu, H., <strong>Pouyabahar, D.</strong>, et al. (2026) HLiCA: An integrated cell atlas of the healthy human liver. In review. https://doi.org/10.64898/2026.06.30.735539</li>
       <li>McEvoy, C.M., et al. (2022). Single-cell profiling of healthy human kidney reveals features of sex-based transcriptional programs and tissue-specific immunity. Nature Communications, 13(1), 7634.</li>
       <li>Kozlowski, H.N., et al. (2023). Genotyping SARS-CoV-2 Variants Using Ratiometric Nucleic Acid Barcode Panels. Analytical Chemistry, 95(14), 5877-5885.</li>
     </ul>
+    <p style="font-size:13px; color:var(--muted); margin-top:2px;">* Equal contribution from authors.</p>
   </div>
 
   <div class="section">
     <h2>Oral Presentations</h2>
     <ul>
-      <li>Modeling sources of variation to interpret single-cell transcriptomic maps. ISCB regional group - Iran | Invited speaker | Nov 2025</li>
-      <li>Advanced computational methods for single-cell transcriptomics. Guest Lecturer | Advanced Omics Methods - MMG1328H | Graduate Course - UofT | April 2025</li>
-      <li>Interpretable single-cell factor decomposition using sciRED. ISMB Conference | RegSys Track Flash Talk | July 2024</li>
-      <li>Modeling sources of variation in single-cell transcriptomic maps. Donnelly Centre Postdoctoral Talks | June 2024</li>
-      <li>High-dimensional analysis in single-cell transcriptomics: Thinking beyond tradition. PANORAMICS - Donnelly Centre | July 2023</li>
-      <li>Single-cell profiling reveals strain-specific differences in rat intrahepatic macrophage inflammatory potential. Sheila Sherlock Research Day | University Health Network | Oct 2022</li>
-      <li>Guidelines for annotating single-cell transcriptomic maps using automated and manual methods. 10x Genomics Webinar | Dec 2021 | co-presented with Tallulah Andrews and Zoe Clarke</li>
+      <li>Modeling sources of variation to interpret single-cell transcriptomic maps. ISCB regional group - Iran <span class="sep">&middot;</span> Invited speaker <span class="sep">&middot;</span> Nov 2025</li>
+      <li>Advanced computational methods for single-cell transcriptomics. Guest Lecturer <span class="sep">&middot;</span> Advanced Omics Methods - MMG1328H <span class="sep">&middot;</span> Graduate Course - UofT <span class="sep">&middot;</span> April 2025</li>
+      <li>Interpretable single-cell factor decomposition using sciRED. ISMB Conference <span class="sep">&middot;</span> RegSys Track Flash Talk <span class="sep">&middot;</span> July 2024</li>
+      <li>Modeling sources of variation in single-cell transcriptomic maps. Donnelly Centre Postdoctoral Talks <span class="sep">&middot;</span> June 2024</li>
+      <li>High-dimensional analysis in single-cell transcriptomics: Thinking beyond tradition. PANORAMICS - Donnelly Centre <span class="sep">&middot;</span> July 2023</li>
+      <li>Single-cell profiling reveals strain-specific differences in rat intrahepatic macrophage inflammatory potential. Sheila Sherlock Research Day <span class="sep">&middot;</span> University Health Network <span class="sep">&middot;</span> Oct 2022</li>
+      <li>Guidelines for annotating single-cell transcriptomic maps using automated and manual methods. 10x Genomics Webinar <span class="sep">&middot;</span> Dec 2021 <span class="sep">&middot;</span> co-presented with Tallulah Andrews and Zoe Clarke</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>Poster Presentations</h2>
     <ul>
-      <li>ISMB Conference | July 2024</li>
-      <li>CCBR retreat | June 2022, June 2023, June 2024</li>
-      <li>5th Annual PRiME Symposium | Feb 2024</li>
-      <li>Keystone Symposium | Single-Cell Biology: Genomics, Technologies, and Disease | Jan 2024</li>
-      <li>Medicine by Design’s Annual Symposium | Dec 2020, Dec 2021, Dec 2023</li>
-      <li>Data Science Research Day | Data Science Institute | Sep 2023</li>
-      <li>GLBIO Conference | May 2023</li>
-      <li>Molecular Genetics retreat | University of Toronto | Sep 2022</li>
-      <li>ISMB Conference | Virtual | July 2022</li>
-      <li>Canadian Liver Meeting | Virtual | May 2021, May 2022</li>
+      <li>ISMB Conference <span class="sep">&middot;</span> July 2024</li>
+      <li>CCBR retreat <span class="sep">&middot;</span> June 2022, June 2023, June 2024</li>
+      <li>5th Annual PRiME Symposium <span class="sep">&middot;</span> Feb 2024</li>
+      <li>Keystone Symposium <span class="sep">&middot;</span> Single-Cell Biology: Genomics, Technologies, and Disease <span class="sep">&middot;</span> Jan 2024</li>
+      <li>Medicine by Design’s Annual Symposium <span class="sep">&middot;</span> Dec 2020, Dec 2021, Dec 2023</li>
+      <li>Data Science Research Day <span class="sep">&middot;</span> Data Science Institute <span class="sep">&middot;</span> Sep 2023</li>
+      <li>GLBIO Conference <span class="sep">&middot;</span> May 2023</li>
+      <li>Molecular Genetics retreat <span class="sep">&middot;</span> University of Toronto <span class="sep">&middot;</span> Sep 2022</li>
+      <li>ISMB Conference <span class="sep">&middot;</span> Virtual <span class="sep">&middot;</span> July 2022</li>
+      <li>Canadian Liver Meeting <span class="sep">&middot;</span> Virtual <span class="sep">&middot;</span> May 2021, May 2022</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>Honors and Funding</h2>
     <ul>
+      <li>Selected Fully Funded Participant, CIFAR MacMillan Multiscale Human School - 2026</li>
       <li>Eric and Wendy Schmidt Postdoctoral Fellowship, Broad Institute of MIT and Harvard - 2025</li>
       <li>Doctoral Student Fellowship, Data Science Institute, University of Toronto - 2022–2025</li>
       <li>SGS Summer Conference Grant, University of Toronto - ISMB Conference, 2024</li>
@@ -293,23 +544,23 @@
 
     <h3>Course Instructor</h3>
     <ul>
-      <li>Data Science Bootcamp Session for SUDS | Intro to Unix Shell, Git, and GitHub | Data Science Institute - UofT | May 2024, April 2023</li>
-      <li>Data Science &amp; Machine Learning Certificates | Introduction to Data Science | Data Science Institute - UofT | Nov 2023</li>
-      <li>Analysis using R workshop | Canadian Bioinformatics Workshops | Dimensionality reduction | June 2023</li>
+      <li>Data Science Bootcamp Session for SUDS <span class="sep">&middot;</span> Intro to Unix Shell, Git, and GitHub <span class="sep">&middot;</span> Data Science Institute - UofT <span class="sep">&middot;</span> Spring 2025, 2024, 2023</li>
+      <li>Data Science &amp; Machine Learning Certificates <span class="sep">&middot;</span> Introduction to Data Science <span class="sep">&middot;</span> Data Science Institute - UofT <span class="sep">&middot;</span> Nov 2023</li>
+      <li>Analysis using R workshop <span class="sep">&middot;</span> Canadian Bioinformatics Workshops <span class="sep">&middot;</span> Dimensionality reduction <span class="sep">&middot;</span> June 2025, 2023</li>
     </ul>
 
     <h3>Teaching Assistance</h3>
     <ul>
-      <li>Pathway and Network Analysis | Canadian Bioinformatics workshops | Nov 2024</li>
-      <li>Genomic Methodologies (MMG3003Y) | University of Toronto | Winter - Summer 2024</li>
-      <li>Genomics (MMG1001) | Head TA | University of Toronto | Fall 2021, 2022, 2023</li>
-      <li>Single Cell RNA-seq Analysis | Canadian Bioinformatics workshops | July 2023, June 2024</li>
-      <li>Programming for Biologists (MMG1004) | University of Toronto | Spring 2021, 2022, 2023</li>
-      <li>Foundations of Data Science | Data Science Institute - UofT | Summer 2022, Winter 2023</li>
-      <li>Introduction to Computer Programming (CSC108) | University of Toronto | Winter 2022, Fall 2022</li>
-      <li>eCampus Ontario Introductory Coding for Genomics | University of Toronto | Fall 2021 - Winter 2022 | Curricular review and assessment of course content</li>
-      <li>Biochemistry | University of Tehran | Fall 2017</li>
-      <li>Structural Biochemistry | University of Tehran | Fall 2016</li>
+      <li>Pathway and Network Analysis <span class="sep">&middot;</span> Canadian Bioinformatics workshops <span class="sep">&middot;</span> Nov 2024</li>
+      <li>Genomic Methodologies (MMG3003Y) <span class="sep">&middot;</span> University of Toronto <span class="sep">&middot;</span> Winter – Summer 2024</li>
+      <li>Genomics (MMG1001) <span class="sep">&middot;</span> Head TA <span class="sep">&middot;</span> University of Toronto <span class="sep">&middot;</span> Fall 2021, 2022, 2023</li>
+      <li>Single Cell RNA-seq Analysis <span class="sep">&middot;</span> Canadian Bioinformatics workshops <span class="sep">&middot;</span> July 2023, June 2024</li>
+      <li>Programming for Biologists (MMG1004) <span class="sep">&middot;</span> University of Toronto <span class="sep">&middot;</span> Spring 2021, 2022, 2023</li>
+      <li>Foundations of Data Science <span class="sep">&middot;</span> Data Science Institute - UofT <span class="sep">&middot;</span> Summer 2022, Winter 2023</li>
+      <li>Introduction to Computer Programming (CSC108) <span class="sep">&middot;</span> University of Toronto <span class="sep">&middot;</span> Winter 2022, Fall 2022</li>
+      <li>eCampus Ontario Introductory Coding for Genomics <span class="sep">&middot;</span> University of Toronto <span class="sep">&middot;</span> Fall 2021 – Winter 2022 <span class="sep">&middot;</span> Curricular review and assessment of course content</li>
+      <li>Biochemistry <span class="sep">&middot;</span> University of Tehran <span class="sep">&middot;</span> Fall 2017</li>
+      <li>Structural Biochemistry <span class="sep">&middot;</span> University of Tehran <span class="sep">&middot;</span> Fall 2016</li>
     </ul>
   </div>
 
@@ -317,16 +568,17 @@
     <h2>Mentorship &amp; Service</h2>
     <ul>
       <li>Review Service: LMRL Workshop, ICLR 2026, BMC Bioinformatics (2025), Scientific Reports (2025), LMRL Workshop, ICLR 2025, Biology Direct (2025), Pacific Symposium on Biocomputing (PSB) (2024), Nature Biotechnology (Co-review, 2024)</li>
-      <li>Undergraduate Research Mentor | University of Toronto | Benchmarking case–control differential cell–cell interaction inference methods in single-cell transcriptomics datasets | Jun 2025 – Present</li>
-      <li>Undergraduate Bioinformatics Project Mentor | BCB330Y1 Supervisor | Exploring Genetic Basis of Transcriptomic Variation in Rat Liver Transplant Models | Sep 2023 - May 2024</li>
-      <li>Research Exploration Opportunity Program by STEM Fellowship | Graduate mentor | STEM Fellowship | March 2022 and March 2021</li>
-      <li>GLSE February Shadowing Program | Graduate mentor | Temerty Faculty of Medicine – U of T | Feb 2022</li>
-      <li>Rotation student Mentorship | Molecular Genetics department rotation program | Factor decomposition of an immune scRNA-seq dataset | Sep 2022</li>
-      <li>Rotation student Mentorship | Molecular Genetics department rotation program | SNV identification based on human liver scRNA-seq atlas | Sep 2023</li>
-      <li>Molecular Genetics Department’s Steward | CUPE 3902 Unit 1 | University of Toronto | Dec 2021 – Jan 2023</li>
-      <li>Bahar Charity Student Club | Child sponsorship program | University of Toronto | Winter 2020 – Winter 2022</li>
+      <li>Undergraduate Student Project Mentor <span class="sep">&middot;</span> Identifying subtle case/control variability in scRNA-seq transcriptomic maps <span class="sep">&middot;</span> Jun 2025 – Present</li>
+      <li>Undergraduate Bioinformatics Project Mentor <span class="sep">&middot;</span> BCB330Y1 Supervisor <span class="sep">&middot;</span> Exploring Genetic Basis of Transcriptomic Variation in Rat Liver Transplant Models <span class="sep">&middot;</span> Sep 2023 – May 2024</li>
+      <li>Research Exploration Opportunity Program by STEM Fellowship <span class="sep">&middot;</span> Graduate mentor <span class="sep">&middot;</span> STEM Fellowship <span class="sep">&middot;</span> March 2022 and March 2021</li>
+      <li>GLSE February Shadowing Program <span class="sep">&middot;</span> Graduate mentor <span class="sep">&middot;</span> Temerty Faculty of Medicine – U of T <span class="sep">&middot;</span> Feb 2022</li>
+      <li>Rotation Student Mentorship <span class="sep">&middot;</span> Molecular Genetics department rotation program <span class="sep">&middot;</span> Factor decomposition of an immune scRNA-seq dataset <span class="sep">&middot;</span> Sep 2022</li>
+      <li>Rotation Student Mentorship <span class="sep">&middot;</span> Molecular Genetics department rotation program <span class="sep">&middot;</span> SNV identification based on human liver scRNA-seq atlas <span class="sep">&middot;</span> Sep 2023</li>
+      <li>Molecular Genetics Department’s Steward <span class="sep">&middot;</span> CUPE 3902 Unit 1 <span class="sep">&middot;</span> University of Toronto <span class="sep">&middot;</span> Dec 2021 – Jan 2023</li>
+      <li>Bahar Charity Student Club <span class="sep">&middot;</span> Child sponsorship program <span class="sep">&middot;</span> University of Toronto <span class="sep">&middot;</span> Winter 2020 – Winter 2022</li>
     </ul>
   </div>
 
+</div>
 </body>
 </html>
